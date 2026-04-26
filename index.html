@@ -10,63 +10,111 @@
 </head>
 <body>
 
-<header class="bg-primary text-white p-3">
-  <div class="container d-flex justify-content-between">
-    <div><strong>👕 Kleiderspenden e.V.</strong></div>
-    <div>Spende registrieren</div>
-  </div>
-</header>
-
-<main class="container my-5">
-
-  <h1 class="text-center">Kleiderspende registrieren</h1>
-
-  <form id="donationForm">
-
-    <label>Art der Übergabe</label>
-    <select id="deliveryType" class="form-control mb-3">
-      <option value="">Bitte auswählen</option>
-      <option value="Geschäftsstelle">Geschäftsstelle</option>
-      <option value="Abholung">Abholung</option>
-    </select>
-
-    <div id="addressFields" style="display:none;">
-      <h4>Adresse</h4>
-
-      <input placeholder="Name" id="name" class="form-control mb-2">
-      <input placeholder="Straße" id="street" class="form-control mb-2">
-      <input placeholder="Hausnummer" id="houseNumber" class="form-control mb-2">
-      <input placeholder="PLZ" id="zipCode" class="form-control mb-2">
-      <input placeholder="Ort" id="city" class="form-control mb-3">
+  <header class="bg-primary text-white p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo">👕 Kleiderspenden e.V.</div>
+      <nav>
+        <a href="#formular" class="text-white me-3">Spende registrieren</a>
+        <a href="#rechtliches" class="text-white">Rechtliches</a>
+      </nav>
     </div>
+  </header>
 
-    <label>Kleidung</label>
-    <select id="clothingType" class="form-control mb-3">
-      <option>Jacken</option>
-      <option>Hosen</option>
-      <option>Schuhe</option>
-    </select>
+  <main class="container my-5">
+    <section class="text-center mb-5">
+      <h1>Kleiderspende registrieren</h1>
+      <p>
+        Unterstützen Sie Menschen in aktuellen Krisengebieten.
+        Entscheiden Sie selbst, wohin Ihre Kleiderspende gesendet werden soll.
+      </p>
+    </section>
 
-    <label>Krisengebiet</label>
-    <select id="crisisArea" class="form-control mb-3">
-      <option>Ukraine</option>
-      <option>Syrien</option>
-      <option>Sudan</option>
-    </select>
+    <section id="formular" class="card p-4 shadow">
+      <h2>Registrierungsformular</h2>
 
-    <button class="btn btn-primary">Absenden</button>
+      <form id="donationForm">
 
-  </form>
+        <div class="mb-3">
+          <label class="form-label">Art der Übergabe</label>
+          <select id="deliveryType" class="form-select" required>
+            <option value="">Bitte auswählen</option>
+            <option value="Geschäftsstelle">Übergabe an der Geschäftsstelle</option>
+            <option value="Abholung">Abholung</option>
+          </select>
+        </div>
 
-  <div id="confirmation" style="display:none; margin-top:20px;"></div>
+        <div id="addressFields" class="d-none">
+          <h3 class="h5 mt-4">Abholadresse</h3>
 
-</main>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" id="name" class="form-control">
+          </div>
 
-<footer class="bg-dark text-white text-center p-3">
-  Impressum | Datenschutz
-</footer>
+          <div class="mb-3">
+            <label class="form-label">Straße</label>
+            <input type="text" id="street" class="form-control">
+          </div>
 
-<script src="script.js"></script>
+          <div class="mb-3">
+            <label class="form-label">Hausnummer</label>
+            <input type="text" id="houseNumber" class="form-control">
+          </div>
 
+          <div class="mb-3">
+            <label class="form-label">Postleitzahl</label>
+            <input type="text" id="zipCode" class="form-control" maxlength="5">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Ort</label>
+            <input type="text" id="city" class="form-control">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Art der Kleidung</label>
+          <select id="clothingType" class="form-select" required>
+            <option value="">Bitte auswählen</option>
+            <option>Jacken</option>
+            <option>Hosen</option>
+            <option>Pullover</option>
+            <option>Schuhe</option>
+            <option>Kinderkleidung</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Krisengebiet</label>
+          <select id="crisisArea" class="form-select" required>
+            <option value="">Bitte auswählen</option>
+            <option>Ukraine</option>
+            <option>Gaza</option>
+            <option>Sudan</option>
+            <option>Syrien</option>
+            <option>Haiti</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+          Spende registrieren
+        </button>
+      </form>
+    </section>
+
+    <section id="confirmation" class="card p-4 shadow mt-5 d-none">
+      <h2>Registrierung erfolgreich</h2>
+      <div id="confirmationData"></div>
+    </section>
+  </main>
+
+  <footer id="rechtliches" class="bg-dark text-white text-center p-4">
+    <p>&copy; 2026 Kleiderspenden e.V.</p>
+    <p>Impressum | Datenschutz | Rechtliche Hinweise</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+</html>
 </html>
