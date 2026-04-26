@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kleiderspenden-Portal</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bg-primary text-white p-3">
+  <div class="container d-flex justify-content-between">
+    <div><strong>👕 Kleiderspenden e.V.</strong></div>
+    <div>Spende registrieren</div>
+  </div>
+</header>
+
+<main class="container my-5">
+
+  <h1 class="text-center">Kleiderspende registrieren</h1>
+
+  <form id="donationForm">
+
+    <label>Art der Übergabe</label>
+    <select id="deliveryType" class="form-control mb-3">
+      <option value="">Bitte auswählen</option>
+      <option value="Geschäftsstelle">Geschäftsstelle</option>
+      <option value="Abholung">Abholung</option>
+    </select>
+
+    <div id="addressFields" style="display:none;">
+      <h4>Adresse</h4>
+
+      <input placeholder="Name" id="name" class="form-control mb-2">
+      <input placeholder="Straße" id="street" class="form-control mb-2">
+      <input placeholder="Hausnummer" id="houseNumber" class="form-control mb-2">
+      <input placeholder="PLZ" id="zipCode" class="form-control mb-2">
+      <input placeholder="Ort" id="city" class="form-control mb-3">
+    </div>
+
+    <label>Kleidung</label>
+    <select id="clothingType" class="form-control mb-3">
+      <option>Jacken</option>
+      <option>Hosen</option>
+      <option>Schuhe</option>
+    </select>
+
+    <label>Krisengebiet</label>
+    <select id="crisisArea" class="form-control mb-3">
+      <option>Ukraine</option>
+      <option>Syrien</option>
+      <option>Sudan</option>
+    </select>
+
+    <button class="btn btn-primary">Absenden</button>
+
+  </form>
+
+  <div id="confirmation" style="display:none; margin-top:20px;"></div>
+
+</main>
+
+<footer class="bg-dark text-white text-center p-3">
+  Impressum | Datenschutz
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
